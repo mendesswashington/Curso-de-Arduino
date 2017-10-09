@@ -1,3 +1,8 @@
+/*
+*Curso de Arduino
+*Washington Santos
+*/
+
 #define led 13
 #define button 7
 byte val = 0;

@@ -20,13 +20,13 @@ void loop() {
   for (i = 0; i < 3; i++) {
     VAL[i] = digitalRead(BTN[i]);
 
-    if(VAL[i] == HIGH){
+    if(VAL[i] == 1){
      if(STD[i]){
-      digitalWrite(LED[i], LOW);
+      digitalWrite(LED[i], 0);
       Serial.println("LED[%d] = off"+i);
       STD[i] = 0;
      }else{
-      digitalWrite(LED[i], HIGH);
+      digitalWrite(LED[i], 1);
       Serial.println("LED[%d] = On"+i);
       STD[i] = 1;
      }

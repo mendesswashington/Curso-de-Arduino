@@ -1,0 +1,106 @@
+const int lm35 = 0;
+float temp = 0;
+int adclido = 0;
+const int buc = 8;
+const int LED[] = {2,3,4,5,6,7,9,10,11,12};
+
+void setup(){
+  analogReference(INTERNAL);
+  Serial.begin(9600);
+  pinMode(buc, OUTPUT);
+  
+  for(int i = 0; i < 10; i++){
+  pinMode(LED[i], OUTPUT);
+  }
+  
+  }
+
+ void loop(){
+  adclido = analogRead(lm35);
+  temp = adclido * 0.10752688817204301;
+  Serial.print("temperatura = ");
+  Serial.print(temp); 
+  Serial.println(" ºC");
+  delay(1000);
+
+  if(temp > 22){
+   digitalWrite(LED[0], HIGH);
+   delay(1000);
+  }else{
+    digitalWrite(LED[0], LOW);
+  }
+
+  if(temp > 22.2){
+    digitalWrite(LED[1], HIGH);
+    delay(1000);
+  }else{
+    digitalWrite(LED[1], LOW);
+  }
+
+  if(temp > 22.5){
+   digitalWrite(LED[2], HIGH);
+   delay(1000);
+  }else{
+    digitalWrite(LED[2], LOW);
+  }
+
+  if(temp > 22.8){
+   digitalWrite(LED[3], HIGH);
+   delay(1000);
+  }else{
+    digitalWrite(LED[3], LOW);
+  }
+
+  if(temp > 23){
+    digitalWrite(LED[4], HIGH);
+    delay(1000);
+  }else{
+    digitalWrite(LED[4], LOW);
+  }
+
+  if(temp > 23.2){
+   digitalWrite(LED[5], HIGH);
+   delay(1000);
+  }else{
+    digitalWrite(LED[5], LOW);
+  }
+  
+  if(temp > 23.5){
+   digitalWrite(LED[6], HIGH);
+   delay(1000);
+  }else{
+    digitalWrite(LED[6], LOW);
+  }
+
+  if(temp > 24){
+   digitalWrite(LED[7], HIGH);
+   delay(1000);
+  }else{
+    digitalWrite(LED[7], LOW);
+  }
+  
+
+  if(temp > 24.5){
+   digitalWrite(LED[8], HIGH);
+   delay(1000);
+  }else{
+    digitalWrite(LED[8], LOW);
+  }
+
+  if(temp > 24.8){
+   digitalWrite(LED[9], HIGH);
+   delay(1000);
+  }else{
+    digitalWrite(LED[9], LOW);
+  } 
+
+  if(temp > 25){
+    digitalWrite(buc, HIGH);
+    digitalWrite(LED[10], HIGH);
+    delay(1000);
+    
+  }else{
+    digitalWrite(LED[10], LOW);
+  }
+  
+ }
